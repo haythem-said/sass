@@ -1,0 +1,23 @@
+//Variables
+// --Color
+$body-color: #ebe3e3;
+$primary-color: #333;
+$heading-color: #fff;
+$links-color: #fff;
+$sub-heading-color: #f4f4f4;
+//--Fonts
+$body-font: Helvetica, sans-serif;
+$steps: (1, 2, 3, 4, 5);
+// function
+@function text-color($color) {
+  @if (lightness($color) > 70) {
+    @return #333;
+  } @else {
+    @return #fff;
+  }
+}
+
+@mixin background-color($color) {
+  background-color: $color;
+  color: text-color($color);
+}
